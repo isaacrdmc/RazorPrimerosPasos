@@ -1,0 +1,29 @@
+﻿@page
+@model IntroduccionRazor.Pages.ArreglosModel
+@{
+}
+
+@{
+	//Definiendo un arreglo de datos tipo STRING
+	string[] nombres = ["Ana", "Juan", "Pedro", "María"];
+	//Obtenemos la posicion en la que se encuentra el nomre pedre
+	int posicion = Array.IndexOf(nombres, "Pedro");
+	//Obtenemos el número de posiciones del arreglo
+	int numeroPosiciones = nombres.Length;
+	//Obtenemos el primer elemento del arreglo
+	string secondElemento = nombres[2 - 1];
+
+}
+
+<h3>Lista de nombres del arreglo</h3>
+
+<ol>
+	@foreach (var nombre in nombres)
+	{
+		<li>@nombre</li>
+	}
+</ol>
+
+<p>El número de personas en el arreglos es: @numeroPosiciones</p>
+<p>El nombre Pedro se encuentra en la posición: @posicion</p>
+<p>El segundo elemento del arreglo es: @secondElemento</p>

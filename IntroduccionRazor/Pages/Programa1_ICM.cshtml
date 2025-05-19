@@ -1,0 +1,34 @@
+﻿@page
+@model IntroduccionRazor.Pages.Programa1_ICMModel
+@{
+}
+
+<h1>Calculador de IMC</h1>
+
+<form method="post">
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+
+	<!-- Solicitamos los datos al usuario -->
+	<p>Ingresa tú peso en kilogramos: <input type="number" asp-for="peso" /></p>
+	<p>Ingres tú altura en centimetros: <input type="number" asp-for="altura" /></p>
+
+	<!-- Ahora calculamos el ICM-->
+	<p> <input type="submit" value="Calcualr ICM" asp-for="imc" /></p>
+</form>
+
+
+
+
+<!-- Mostramos la imágen del resultado de sú IMC -->
+@if (Model.imc > 0)
+{
+	<p>Tú IMC es de: @Model.imc.ToString("f2")</p>
+}
+
+<!-- Mostramos la imágen dle IMC -->
+@if (!string.IsNullOrEmpty(Model.imagenMostrar))
+{
+	<img src="@Model.imagenMostrar" alt="Imagen de tu resultado" />
+}
+

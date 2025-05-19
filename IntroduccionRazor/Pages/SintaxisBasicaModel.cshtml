@@ -1,0 +1,22 @@
+﻿@page
+@model IntroduccionRazor.Pages.SintaxisBasicaModelModel
+@{
+}
+
+<!-- <!-- Escribimos un mensaje utilizando sintaxis de RAZOR-->
+@{
+	var nombre = "Lorena";
+}
+
+<!-- Exoresión en Línea-->
+
+<p>El nombre de la chica misteriosa es: @nombre</p>
+
+<!-- Escribimos un mensaje utilizando sintaxis de RAZOR-->
+@{
+	var bienvenida = "Bienvenido a nuestro sitio!";
+	var diaSemana = DateTime.Now.DayOfWeek;
+	var mensajeBienvenida = bienvenida + " Hoy es " + diaSemana;
+}
+
+<p>El mensaje de bienvenida es : @mensajeBienvenida</p>

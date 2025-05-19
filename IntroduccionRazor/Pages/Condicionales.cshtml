@@ -1,0 +1,60 @@
+﻿@{
+	var calificacion = 6;
+
+}
+
+<h3>Intrucciones Condicionales</h3>
+<p>Tu calificacion es de: @calificacion</p>
+@if (calificacion >= 8)
+{
+	<p>Tu estas aprobado</p>
+}
+else
+{
+	<p>Tu estas reprobado</p>
+}
+<br />
+
+<h3>Intrucciones Condicionales Else-If</h3>
+@{
+	var precio = 25;
+
+}
+<p>El precio actual del producto es: @precio</p>
+@if (precio >= 30)
+{
+	<p>El precio es alto</p>
+}
+else if (precio > 20 && precio < 30)
+{
+	<p>El precio esta bien</p>
+}
+else
+{
+	<p>El precio esta bajo</p>
+}
+
+<h3>Condiciones Múltiples switch/case</h3>
+
+@{
+	var diaSemana = DateTime.Now.DayOfWeek;
+	var dia = diaSemana.ToString();
+	var mensaje = "";
+
+}
+@switch (dia)
+{
+	case "Monday":
+		mensaje = "Este es el primer dia de la semana";
+		break;
+	case "Thursday":
+		mensaje = "Sólo falta un dia para el viernes";
+		break;
+	case "Friday":
+		mensaje = "Hoy es viernes, y el cuerpeee lo sabeee";
+		break;
+	default:
+		mensaje = "Hoy es " + dia;
+		break;
+}
+<p>@mensaje</p>
