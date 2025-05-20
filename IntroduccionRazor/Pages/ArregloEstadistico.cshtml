@@ -4,7 +4,7 @@
 }
 
 <!--
-	Diseñar una aplicación en ASP .Net que genere un arreglo con 20 números enteros
+Diseñar una aplicación en ASP .Net que genere un arreglo con 20 números enteros
 aleatorios entre 0 y 100, muestre los números en pantalla, calcule y muestre lo
 siguiente:
 • La suma de los números del arreglo.
@@ -24,3 +24,27 @@ Mediana (19 + 21)/2 = 20
 
 
 <h1> Arreglo estadístico</h1>
+
+@if (Model.Numeros != null && Model.Numeros.Length > 0)
+{
+	<h3>Arreglo Alearório:</h3>
+	<p>@string.Join(" ", Model.Numeros)</p>
+
+	<h3>Suma del arreglo: @Model.Suma</h3>
+	<h3>Promedio del arreglo: @Model.Promedio.ToString("0.00")</h3>
+
+	<h3>Arreglo Ordenado</h3>
+	<p>@string.Join(" ", Model.NumerosOrdenados)</p>
+
+	<h3>Moda: @Model.Moda</h3>
+	<h3>Mediana: @Model.Mediana</h3>
+
+} else
+{
+	<p>No se han podido genera números</p>
+}
+
+	<!--  -->
+
+
+
