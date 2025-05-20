@@ -1,0 +1,46 @@
+﻿@page
+@model IntroduccionRazor.Pages.CifradoCesarModel
+@{
+}
+<!-- 
+
+Según el historiador Cayo Suetonio el dictador perpetuus Julio César utilizaba un
+código cuando quería mantener en secreto un mensaje. Tomaba cada una de las
+25 letras del alfabeto latino (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T,
+U, V, X, Y, Z) y las sustituía por otra letra situada n posiciones más a la derecha
+en el orden alfabético anterior. Así, si n=3, a la A le correspondería la D. Este simple
+código además de ser un código de sustitución es un código de rotación ya que
+para las últimas letras se vuelve a retomar el conteo por el principio. Esto es, de
+nuevo para n=3, a la X le correspondería la A. Ahondando en el ejemplo, para n=3
+si el emperador afirmaba que "la suerte está echada" (ALEA IACTA EST) el mensaje
+cifrado sería DOHD LDFBD HAB.
+
+Crear una aplicación en ASP .NET que codifique y decodifique los mensajes cifrados
+con este sistema para un n positivo cualquiera.
+-->
+
+
+<h1>Cifrado César</h1>
+
+<form method="post">
+	<!-- Sección para ingresar el texto -->
+	<label>Ingresa el texto que quieres cifrar:</label>
+	<input type="text" asp-for="TextoOriginal" required/>
+
+	<!-- Sección de la cantidad a desplazar -->
+	<label>Desplazamiento del texto:</label>
+	<input type="number" asp-for="Desplazamiento" required/>
+
+	<!-- Boton para poder calcular -->
+	<button type="submit">Cifrar los datos</button>
+</form>
+
+<!-- Salida para el texto cifrado -->
+@if (Model.TextoCifrado != null)
+{
+	<h3>Texto cifrado:</h3>
+	<p>@Model.TextoCifrado</p>
+}
+
+
+
